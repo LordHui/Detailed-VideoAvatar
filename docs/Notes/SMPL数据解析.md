@@ -16,19 +16,22 @@
 | - | - | - |
 | J_regressor_prior | (24,6890) |
 | f | (13776,3) | face，就是每个三角形，[i0,i1,i2]其中i是点的序号（0~6889）
-| J_regressor | (24,6890) |
-| kintree_table | (2,24) | kinematic tree
-| J | (24,3)|
+| J_regressor | (24,6890) |joint的回归矩阵，用于给joint定位
+| kintree_table | (2,24) | 关节树
+| J | (24,3)|关节坐标
 | weights_prior | (6890,24)|
-| weights | (6890,24) |
+| weights | (6890,24) |混合权重（关节点-顶点）
 | vert_sym_idxs | (6890) | 点的序号（0~6889）不是顺序的
-| posedirs | (6890,3,207)
+| posedirs | (6890,3,207)|pose的字典对应论文中的pose blend shapes
 | pose_training_info | {一个字典}
-| bs_style | string | "lbs"
+| bs_style | string | 蒙皮方法LBS还是DQBS
 | bs_type | string | "lrotmin"
-| v_template | (6890,3) | 模型的局部空间坐标
-| shapedirs | (6890,3,10) | 10shapes
-
+| v_template | (6890,3) | 模型的局部空间坐标，所有的优化都是在这个基础上进行的
+| shapedirs | (6890,3,10) | shape的字典对应论文中的shape blend shapes
+| trans | | 平移量
+| pose | | 定义了pose的参数，关节个数x3（转轴方向，旋转角度）
+| beta | | 定义shape的参数
+| v_personal |  | 和v_template相同规模，是每个顶点的offset
 ## magic numbers
 
 ### 6890
