@@ -28,10 +28,10 @@
 | bs_type | string | "lrotmin"
 | v_template | (6890,3) | 模型的局部空间坐标，所有的优化都是在这个基础上进行的
 | shapedirs | (6890,3,10) | shape的字典对应论文中的shape blend shapes
-| trans | | 平移量
-| pose | | 定义了pose的参数，关节个数x3（转轴方向，旋转角度）
-| beta | | 定义shape的参数
-| v_personal |  | 和v_template相同规模，是每个顶点的offset
+| trans |(1,3) | 平移量
+| pose |(3,24) | 定义了pose的参数，关节个数x3（转轴方向，旋转角度）
+| beta |(1,10) | 定义shape的参数
+| v_personal | (6890,3) | 和v_template相同规模，是每个顶点的offset
 ## magic numbers
 
 ### 6890
